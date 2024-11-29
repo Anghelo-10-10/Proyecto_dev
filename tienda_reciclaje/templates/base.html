@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EcoVolt{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>EcoVolt</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="#programas">Programas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="btn-header">Únete Ahora</button>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <h3>Contáctanos</h3>
+        <p>¿Tienes dudas o deseas unirte? Escríbenos a: <a href="mailto:ecovolt@gmail.com">ecovolt@gmail.com</a></p>
+    </footer>
+</body>
+</html>
