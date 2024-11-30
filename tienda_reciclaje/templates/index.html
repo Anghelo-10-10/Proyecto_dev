@@ -1,34 +1,49 @@
-{% extends 'base.html' %}
-
-{% block title %}Inicio - EcoVolt{% endblock %}
-
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Werther{% endblock title %}
 {% block content %}
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Recicla tu Tecnología, Protege el Planeta</h2>
-        <p>Transforma tus dispositivos electrónicos en una oportunidad para el medio ambiente. Únete a nuestra plataforma de reciclaje tecnológico.</p>
-        <button class="btn-main">Más Información</button>
-    </section>
 
-    <!-- Programas Section -->
-    <section class="programas" id="programas">
-        <h3>Nuestros Programas de Reciclaje</h3>
-        <div class="programas-container">
-            <div class="programa">
-                <img src="https://via.placeholder.com/300x200.png?text=Reciclaje+de+Computadoras" alt="Reciclaje de computadoras">
-                <h4>Reciclaje de Computadoras</h4>
-                <p>Recoge y recicla computadoras viejas de manera responsable para reducir el impacto ambiental.</p>
-            </div>
-            <div class="programa">
-                <img src="https://via.placeholder.com/300x200.png?text=Donación+de+Partes" alt="Donación de partes">
-                <h4>Donación de Partes</h4>
-                <p>Aprovecha las piezas útiles de tus dispositivos para apoyar proyectos tecnológicos sostenibles.</p>
-            </div>
-            <div class="programa">
-                <img src="https://via.placeholder.com/300x200.png?text=Educación+Tecnológica" alt="Educación tecnológica">
-                <h4>Educación Tecnológica</h4>
-                <p>Aprende sobre cómo manejar residuos electrónicos y contribuir al reciclaje global.</p>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <a href="category/">
+                        <button class="btn btn-outline-primary btn-lg btn-block" width="128" height="128">
+                            <img src="{% static 'category.jpg' %}" class="img-fluid">
+                            <span style="color:gray;">Categorías</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="col-6 mb-3">
+                    <a href="product/">
+                        <button class="btn btn-outline-primary btn-lg btn-block" width="128" height="128">
+                            <img src="{% static 'product.jpg' %}" class="img-fluid">
+                            <span style="color:gray;">Libros</span>
+                        </button>
+                    </a>
+                </div>
+                {% if user.is_authenticated %}
+                    <div class="col-6 mb-3">
+                        <a href="client/">
+                            <button class="btn btn-outline-primary btn-lg btn-block"  width="128" height="128">
+                                <img src="{% static 'client.jpg' %}" class="img-fluid">
+                                <span style="color:gray;">Clientes</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <a href="purchase/">
+                            <button class="btn btn-outline-primary btn-lg btn-block"  width="128" height="128">
+                                <img src="{% static 'purchase.jpg' %}" class="img-fluid">
+                                <span style="color:gray;">Compras</span>
+                            </button>
+                        </a>
+                    </div>
+                {% endif %}
             </div>
         </div>
-    </section>
-{% endblock %}
+    </div>
+</div>
+
+{% endblock content %}
